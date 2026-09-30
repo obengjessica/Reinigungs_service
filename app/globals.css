@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  /* RGB channel triples so Tailwind's alpha-value modifiers work */
+  --surface: 250 248 246;      /* page background — warm off-white */
+  --card: 255 255 255;         /* card / panel background */
+  --ink: 27 33 30;             /* primary text */
+  --ink-muted: 79 92 87;       /* secondary text */
+  --hairline: 224 233 227;     /* borders */
+
+  --color-primary: #1e7a54;
+  --color-secondary: #cdead9;
+  --color-surface: #faf8f6;
+  --color-text: #1b211e;
+  --color-text-muted: #4f5c57;
+}
+
+.dark {
+  color-scheme: dark;
+  --surface: 15 19 17;         /* deep charcoal-green page background */
+  --card: 24 29 27;            /* elevated dark card */
+  --ink: 240 242 240;          /* primary text on dark */
+  --ink-muted: 168 178 173;    /* secondary text on dark */
+  --hairline: 45 54 50;        /* subtle borders on dark */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: rgb(var(--surface));
+  color: rgb(var(--ink));
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+a,
+button {
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+
+*:focus-visible {
+  outline: 2px solid #1e7a54;
+  outline-offset: 2px;
+}
+
+.dark *:focus-visible {
+  outline-color: #7fd8ae;
+}
+
+::selection {
+  background-color: #f7dce6;
+  color: #1b211e;
+}
+
+/* Utility: hide scrollbar for swipeable rows while keeping scroll */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@layer components {
+  .pro-image-frame {
+    @apply overflow-hidden rounded-2xl border border-hairline bg-card shadow-card ring-1 ring-black/[0.03] dark:shadow-card-dark;
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-mint bg-card px-4 py-1.5 font-body text-xs font-semibold uppercase tracking-[0.06em] text-brand-forest shadow-sm dark:border-brand-forest/40 md:text-sm;
+  }
+
+  .glass-panel {
+    @apply rounded-2xl border border-hairline bg-card shadow-card dark:shadow-card-dark;
+  }
+
+  .nav-link {
+    @apply cursor-pointer rounded-lg px-4 py-2 font-body text-sm font-semibold text-ink-muted transition hover:bg-brand-mintLight hover:text-brand-forest dark:hover:bg-white/5;
+  }
+
+  .nav-link-active {
+    @apply bg-brand-mintLight text-brand-forest dark:bg-white/5;
+  }
+
+  .section-band {
+    @apply border-y border-hairline bg-card;
+  }
+
+  .pink-underline {
+    background-image: linear-gradient(to right, theme("colors.brand.pink"), theme("colors.brand.pink"));
+    background-repeat: no-repeat;
+    background-position: 0 92%;
+    background-size: 100% 0.4em;
+  }
+}
