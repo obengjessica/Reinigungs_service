@@ -101,13 +101,20 @@ export function HeroSection() {
             </Button>
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="mt-6">
+          <motion.div variants={fadeInUp} className="mt-6 flex flex-col items-start gap-2">
             <a
               href={BUSINESS_CONTACT.phoneHref}
-              className="inline-flex cursor-pointer items-center gap-2 font-body text-sm font-semibold text-white/90 underline-offset-4 hover:underline"
+              className="inline-flex max-w-full cursor-pointer items-center gap-2 font-body text-sm font-semibold text-white/90 underline-offset-4 hover:underline"
             >
               <Icon name="phone" className="h-4 w-4 text-brand-accent" />
               {t.hero.ctaCall}: {BUSINESS_CONTACT.phoneDisplay}
+            </a>
+            <a
+              href={BUSINESS_CONTACT.emailHref}
+              className="inline-flex max-w-full cursor-pointer items-center gap-2 font-body text-sm font-semibold text-white/90 underline-offset-4 hover:underline"
+            >
+              <Icon name="mail" className="h-4 w-4 text-brand-accent" />
+              {t.contact.emailLabel}: {BUSINESS_CONTACT.email}
             </a>
           </motion.div>
 
