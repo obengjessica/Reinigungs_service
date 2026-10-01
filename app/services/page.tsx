@@ -59,7 +59,6 @@ export default function ServicesPage() {
               ["/reinigungsservice-goettingen", "Reinigungsservice Göttingen"],
               ["/gebaeudereinigung-goettingen", "Gebäudereinigung Göttingen"],
               ["/bueroreinigung-goettingen", "Büroreinigung Göttingen"],
-              ["/fensterreinigung-goettingen", "Fensterreinigung Göttingen"],
               ["/grundreinigung-goettingen", "Grundreinigung Göttingen"],
             ].map(([href, label]) => (
               <Link

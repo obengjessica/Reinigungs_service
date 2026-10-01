@@ -18,7 +18,6 @@ const serviceLinks = [
   { href: "/reinigungsservice-goettingen", label: "Reinigungsservice" },
   { href: "/bueroreinigung-goettingen", label: "Büroreinigung" },
   { href: "/grundreinigung-goettingen", label: "Grundreinigung" },
-  { href: "/fensterreinigung-goettingen", label: "Fensterreinigung" },
   { href: "/gebaeudereinigung-goettingen", label: "Gebäudereinigung" },
 ];
 

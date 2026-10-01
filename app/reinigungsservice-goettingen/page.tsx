@@ -151,11 +151,6 @@ export default function GoettingenLandingPage() {
               text: "Saubere Arbeitsplätze für Produktivität, Hygiene und Kundenwirkung.",
             },
             {
-              href: "/fensterreinigung-goettingen",
-              title: "Fensterreinigung Göttingen",
-              text: "Streifenfreie Fensterreinigung für Wohnungen, Häuser und Büros.",
-            },
-            {
               href: "/grundreinigung-goettingen",
               title: "Grundreinigung Göttingen",
               text: "Intensive Tiefenreinigung für Neustarts, Umzüge und Sonderfälle.",
