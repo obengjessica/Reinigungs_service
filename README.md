@@ -4,7 +4,7 @@ Marketing website for ReinigungsService-Göttingen, an independent cleaning
 service covering staircases, offices, buildings and communal areas in
 Göttingen and the surrounding area.
 
-**Live site:** _add your Vercel URL here_
+**Live site:** https://reinigungs-service.vercel.app/
 
 ---
 
